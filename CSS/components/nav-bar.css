@@ -17,10 +17,23 @@
   color: #2e363e;
 }
 
+@keyframes notificationAnimation {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-5px) rotateY(360deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
 .nav__notification {
   position: absolute;
   left: 20px;
   bottom: 20px;
+  animation: notificationAnimation 2s ease-in-out infinite;
 }
 
 .nav__notification2 {
@@ -32,4 +45,32 @@
   position: absolute;
   left: 30px;
   bottom: 30px;
+}
+
+@keyframes appearBthAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.nav__bth {
+  transform: translateY(50px);
+  opacity: 0;
+  animation: appearBthAnimation 1s ease-in-out forwards;
+}
+
+.nav__bth:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.nav__bth:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.nav__bth:nth-child(4) {
+  animation-delay: 1.5s;
 }
